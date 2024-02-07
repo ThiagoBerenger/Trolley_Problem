@@ -38,33 +38,6 @@ document.addEventListener("DOMContentLoaded", function() {
         objectTwo.src = currentObjectTwo
     }
 
-    function animateObjects() { 
-
-        let positionObjectOne = -200
-        let positionObjectTwo = -200
-
-        function moveDown() {
-            positionObjectOne += 2
-            positionObjectTwo += 2
-            
-            objectOne.style.top = positionObjectOne + 'px'
-            objectTwo.style.top = positionObjectTwo + 'px'
-
-            if(positionObjectOne >= 1200 || positionObjectTwo >= 1200 ) {
-                
-                
-
-                objectOne.style.display = 'none'
-                objectTwo.style.display = 'none'
-
-                
-            }
-            requestAnimationFrame(moveDown)
-        }
-
-        moveDown()
-    }
-
     function saveOne() {
         objectOne.addEventListener('click', () => {
             objectOne.style.display = 'none'
@@ -76,9 +49,6 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     }   
 
- 
-    
-    animateObjects()
     setObjects()
     saveOne()
 

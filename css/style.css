@@ -2,110 +2,64 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    overflow: hidden;
 }
+
+body {
+    background-color: #0d0d0d;
+}
+
 
 #main {
-    display: flex;
-    background: url('../images/grass.jpg') repeat 0 0;
-    background-size: 40%;
-    height: 100vh;
-    width: 100%;
-    filter: blur(10%);
-    overflow: hidden;
-    justify-content: center;
-    animation: animateBackground 16s infinite;
-    animation-timing-function: linear;
-}
-
-.train img {
-    z-index: 1;
-    width: 100px;
-    position:absolute;
-    top: 70%;
-    left: 47.5%;
-}
-
-.track-line { 
-    overflow: hidden;
     position: absolute;
-    bottom: 0em;
-    justify-content: center;
-    align-items: center;
-    animation: animateTracks 4s linear infinite;
+    top: 6rem;
+    left: 20rem;
+    background-color: #fff;
 }
 
- .track-line img{
-    width: 700px;
-} 
+/* train */
 
-@keyframes animateBackground {
-    100% {
-        background-position: 0px 3250px;
-    }
+#trolley-div {
+    border: 2px #ccc solid;
 }
 
-@keyframes animateTracks {
-    100% {
-        transform: translateY(45%);
-    }
-}
-
-
-/* kd */
-
-.kill-count {
-    cursor: default;
-    color: white;
+.train {
     position: absolute;
-    display: flex;
-    left: 8rem;
     top: 6rem;
 }
 
-.kill-number {
-    padding-left: 1rem;
-    font-size: 52px;
+@keyframes animateTrain {
+    
 }
 
-/* objetos */
 
-.disabled {
-    pointer-events: none; 
-    transform: scale(1.4, 1.4);
-}
 
-.objects {    
-    display: flex;
-    z-index: 1;
-}
 
-.objects img {
-    height: 100px;
-    cursor: pointer;
-    transition: .2s ease;
-}
+
+
+
+
+/* objects */
 
 .one {
-    display: flex;
+    top: 17rem;
+    right: 9rem;
     position: absolute;
-    /* top: -120px; */
-    left: 54rem;
+    width: 140px;
+    cursor: pointer;
+    transition: .5s ease;
 }
 
 .two {
-    display: flex;
+    top: 28rem;
+    right: 17rem;
     position: absolute;
-    /* top: -120px; */
+    width: 150px;
+    cursor: pointer;
+    transition: .5s ease;
 }
 
-.one:hover, 
-.two:hover {
-    transform: scale(1.2, 1.2);
+.one:hover, .two:hover {
+    transform: scale(1.2,1.2);
 }
 
-@keyframes animateObjects {
-    100% {
-        transform: translateY(50%);
-    }
-}
+
