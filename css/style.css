@@ -85,6 +85,11 @@ body {
     transform: scale(1.2,1.2);
 }
 
+.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 /* kill-count */
 
 .kill-count {

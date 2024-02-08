@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const smashAudio = new Audio('./audio/smash.mp3');
     const backgroundMusic = document.querySelector('.background-music');
     backgroundMusic.volume = 0.1;
+    backgroundMusic.play()
 
     const characters = [
         './images/kittie.png',
@@ -42,15 +43,21 @@ document.addEventListener("DOMContentLoaded", function() {
         objectOne.addEventListener('click', () => {
             
             train.classList.add('train-two')
-            objectOne.classList.add("disabled")
+            objectTwo.classList.add("disabled")
 
             setTimeout(function(){
                 objectOne.style.visibility = 'hidden'
                 smashAudio.play()
             }, 900)
            
+            setTimeout(function() {
+                setObjects()
+                objectOne.style.visibility = 'visible'
+                objectTwo.classList.remove('disabled')
+            }, 2000)
+           
         })
-        
+
         objectTwo.addEventListener('click', () => {
 
             train.classList.add('train-one')
@@ -60,6 +67,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 objectTwo.style.visibility = 'hidden'
                 smashAudio.play()
             }, 500)
+
+            setTimeout(function() {
+                setObjects()
+                objectTwo.style.visibility = 'visible'
+                objectOne.classList.remove('disabled')
+            }, 2000)
         })
     }       
 
