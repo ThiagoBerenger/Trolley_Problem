@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
         './images/uncle.png',
         './images/aunt.png',
         './images/neighbor.png',
-        './images/crush.png',
+        './images/the-crush.png',
         './images/money.png',
         './images/extinct-animal.png',
         './images/dollars.png'
