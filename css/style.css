@@ -27,6 +27,17 @@ body {
     color: #0d0d0d;
 }
 
+.hide-train {
+    z-index: 2;
+    position: absolute;
+    overflow: hidden;
+    height: 600px;
+    width: 500px;
+    background-color: #0d0d0d;
+    right: -31.3rem;
+    top: 6rem;
+}
+
 
 /* train */
 
@@ -35,6 +46,7 @@ body {
 }
 
 .train {
+    z-index: 1;
     -webkit-animation: vibrate-1 0.5s linear infinite both;
 	animation: vibrate-1 0.5s linear infinite both;
     position: absolute;
