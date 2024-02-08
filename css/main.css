@@ -100,9 +100,6 @@ body {
     font-size: 32px;
 }
 
-
-/* animation */
-
 /* animation train */
 
 @keyframes animate-one {
@@ -140,11 +137,6 @@ body {
         transform: translate(1400px, 150px);
     }
   }
-
-
-
-
-
 
 
 @-webkit-keyframes vibrate-1 {
