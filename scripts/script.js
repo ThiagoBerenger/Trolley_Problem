@@ -21,9 +21,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const objectOne = document.querySelector('.one');
     const objectTwo = document.querySelector('.two');
     const train = document.querySelector('.train');
+    const kills = document.querySelector('.kill-number')    
 
-    const objectOneRect = train.getBoundingClientRect()
-    console.log(objectOneRect)
+    let objectOneClicked = false;
+    let objectTwoClicked = false;
 
 
     function setObjects() {
@@ -37,28 +38,41 @@ document.addEventListener("DOMContentLoaded", function() {
 
         objectOne.src = currentObjectOne
         objectTwo.src = currentObjectTwo
+
+         objectOneClicked = false;
+         objectTwoClicked = false;
+
     }
 
     function chooseOne() {
         objectOne.addEventListener('click', () => {
-            
+
+            if (!objectOneClicked) {
+                objectOneClicked = true;
+
             train.classList.add('train-two')
             objectTwo.classList.add("disabled")
 
             setTimeout(function(){
                 objectOne.style.visibility = 'hidden'
                 smashAudio.play()
+                kills.innerHTML = parseInt(kills.innerHTML) + 1
             }, 900)
            
             setTimeout(function() {
                 setObjects()
                 objectOne.style.visibility = 'visible'
+                objectOne.classList.remove('disabled')
                 objectTwo.classList.remove('disabled')
+                train.classList.remove('train-two')
             }, 2000)
-           
+          }
         })
 
         objectTwo.addEventListener('click', () => {
+
+            if (!objectTwoClicked) {
+                objectTwoClicked = true;
 
             train.classList.add('train-one')
             objectOne.classList.add("disabled")
@@ -66,18 +80,21 @@ document.addEventListener("DOMContentLoaded", function() {
             setTimeout(function(){
                 objectTwo.style.visibility = 'hidden'
                 smashAudio.play()
+                kills.innerHTML = parseInt(kills.innerHTML) + 1
             }, 500)
 
             setTimeout(function() {
                 setObjects()
                 objectTwo.style.visibility = 'visible'
                 objectOne.classList.remove('disabled')
+                objectTwo.classList.remove('disabled')
+                train.classList.remove('train-one')
             }, 2000)
+          }
         })
     }       
 
     setObjects()
     chooseOne()
-
 
 })
