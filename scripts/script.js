@@ -38,18 +38,33 @@ document.addEventListener("DOMContentLoaded", function() {
         objectTwo.src = currentObjectTwo
     }
 
-    function saveOne() {
+    function chooseOne() {
         objectOne.addEventListener('click', () => {
-            objectOne.style.display = 'none'
-            objectTwo.classList.add("disabled")
-        })
-        objectTwo.addEventListener('click', () => {
-            objectTwo.style.display = 'none'
+            
+            train.classList.add('train-two')
             objectOne.classList.add("disabled")
+
+            setTimeout(function(){
+                objectOne.style.visibility = 'hidden'
+                smashAudio.play()
+            }, 900)
+           
         })
-    }   
+        
+        objectTwo.addEventListener('click', () => {
+
+            train.classList.add('train-one')
+            objectOne.classList.add("disabled")
+            
+            setTimeout(function(){
+                objectTwo.style.visibility = 'hidden'
+                smashAudio.play()
+            }, 500)
+        })
+    }       
 
     setObjects()
-    saveOne()
+    chooseOne()
+
 
 })
