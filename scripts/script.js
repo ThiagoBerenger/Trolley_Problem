@@ -15,7 +15,9 @@ document.addEventListener("DOMContentLoaded", function() {
         './images/aunt.png',
         './images/neighbor.png',
         './images/crush.png',
-        './images/money.png'
+        './images/money.png',
+        './images/extinct-animal.png',
+        './images/dollars.png'
     ];
 
     const objectOne = document.querySelector('.one');
